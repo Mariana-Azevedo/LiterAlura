@@ -1,8 +1,8 @@
-package services;
+package com.example.literAlura.services;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.DadosLivro;
+import com.example.literAlura.model.DadosLivro;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -12,8 +12,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 

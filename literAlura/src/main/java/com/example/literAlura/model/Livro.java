@@ -1,4 +1,4 @@
-package model;
+package com.example.literAlura.model;
 
 import jakarta.persistence.*;
 
@@ -12,13 +12,14 @@ public class Livro {
     @Column(unique = true, nullable = false)
     private String titulo;
 
-    private String autor;
+    @ManyToOne
+    private Autor autor;
 
     private String idioma;
 
     private Double numDownloads;
 
-    public Livro(String titulo, String autor, String idioma, Double numDownloads) {
+    public Livro(String titulo, Autor autor, String idioma, Double numDownloads) {
         this.titulo = titulo;
         this.autor = autor;
         this.idioma = idioma;
@@ -29,20 +30,16 @@ public class Livro {
 
     }
 
+    public Autor getAutor() { return autor; }
+
+    public void setAutor(Autor autor) { this.autor = autor; }
+
     public String getTitulo() {
         return titulo;
     }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public String getAutor() {
-        return autor;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
     }
 
     public String getIdioma() {
